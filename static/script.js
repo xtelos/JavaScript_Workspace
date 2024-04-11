@@ -17,13 +17,8 @@ document.getElementById('game').addEventListener('submit', function(e) {
         document.getElementById('rawData1').innerHTML = gameData;
         document.getElementById('rawData1').style.display = 'inline-block';
     });
-});
 
-
-// add news for the game searched from flask
-document.getElementById('game').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var gameName = document.getElementsByName('gameName')[0].value;
+    // fetch news data for game
     fetch('/gamedata/' + gameName, {
         method: 'POST',
         headers: {
